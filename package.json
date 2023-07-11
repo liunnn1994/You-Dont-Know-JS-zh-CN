@@ -9,9 +9,9 @@
         "url": "https://github.com/liunnn1994/You-Dont-Know-JS-zh-CN.git"
     },
     "scripts": {
-        "ol:dev": "vitepress dev online",
-        "ol:build": "vitepress build online",
-        "ol:preview": "vitepress preview online"
+        "ol:dev": "vitepress dev",
+        "ol:build": "vitepress build",
+        "ol:preview": "vitepress preview"
     },
     "devDependencies": {
         "prettier": "^3.0.0",
