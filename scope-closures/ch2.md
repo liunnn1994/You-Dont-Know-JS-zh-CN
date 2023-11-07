@@ -297,7 +297,7 @@ console.log(nextStudent);
 
 <figure>
     <img src="./images/fig3.png" width="250" alt="Scope &quot;Building&quot;" align="center">
-    <figcaption><em>图 3：作用域”建筑“</em></figcaption>
+    <figcaption><em>图 3：作用域‘建筑’</em></figcaption>
     <br><br>
 </figure>
 

@@ -318,7 +318,7 @@ export default function getName(studentID) {
 
 Non-`default` exports are referred to as "named exports."
 
-非默认 (`default`) 导出称为“命名导出”。
+非默认 (`default`) 导出称为’命名导出‘。
 
 The `import` keyword—like `export`, it must be used only at the top level of an ESM outside of any blocks or functions—also has a number of variations in syntax. The first is referred to as "named import":
 

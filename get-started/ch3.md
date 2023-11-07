@@ -420,7 +420,7 @@ homework.topic;
     <br><br>
 </figure>
 
-`homework` 对象上的 `topic` [“遮蔽”](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)了 `otherHomework` 链上的同名属性，这被称为属性遮蔽（Property Shadowing）。
+`homework` 对象上的 `topic` [’遮蔽‘](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)了 `otherHomework` 链上的同名属性，这被称为属性遮蔽（Property Shadowing）。
 
 | NOTE:                                                                                                                                                                                                         |
 | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -464,7 +464,7 @@ mathHomework.study();
 
 与许多其他语言不同，JS 的 `this` 是动态的，是允许原型委托的，而且 `class` 也会按预期运行！
 
-## 常问 ”为什么？“
+## 常问 ‘为什么？’
 
 本章的预期收获是，在 JS 的引擎中有很多东西比从表面上看出来的要多。
 
