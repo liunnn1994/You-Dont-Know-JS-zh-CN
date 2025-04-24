@@ -3,7 +3,8 @@
 This is a series of books diving deep into the core mechanisms of the JavaScript language. This is the **second edition** of the book series:
 
 <a href="https://leanpub.com/ydkjsy-get-started"><img src="get-started/images/cover.png" width="75"></a>&nbsp;&nbsp;
-<a href="https://leanpub.com/ydkjsy-scope-closures"><img src="scope-closures/images/cover.png" width="75"></a>&nbsp;&nbsp;...
+<a href="https://leanpub.com/ydkjsy-scope-closures"><img src="scope-closures/images/cover.png" width="75"></a>&nbsp;&nbsp;
+<a href="https://leanpub.com/ydkjsy-unbooks"><img src="unbooks-cover.png" width="75"></a>
 
 **To read more about the motivations and perspective behind this book series, check out the [Preface](preface.md).**
 
@@ -15,10 +16,11 @@ I recommend reading the **second edition** books in this order:
 
 * [Get Started](get-started/README.md) | [Buy on Leanpub](https://leanpub.com/ydkjsy-get-started) | [Buy on Amazon](https://www.amazon.com/dp/B084BNMN7T)
 * [Scope & Closures](scope-closures/README.md) | [Buy on Leanpub](https://leanpub.com/ydkjsy-scope-closures) | [Buy on Amazon](https://www.amazon.com/dp/B08634PZ3N)
+* "The Unbooks" (ebook) | [Buy on Leanpub](https://leanpub.com/ydkjsy-unbooks)
 * [Objects & Classes](objects-classes/README.md) (draft stable)
-* [Types & Grammar](types-grammar/README.md) (draft in progress)
-* Sync & Async (not yet started)
-* ES.Next & Beyond (not yet started)
+* [Types & Grammar](types-grammar/README.md) (rough draft)
+* ~~Sync & Async (canceled)~~
+* ~~ES.Next & Beyond (canceled)~~
 
 If you're looking for the previous **first edition** books, [they can be found here](https://github.com/getify/You-Dont-Know-JS/blob/1st-ed/README.md).
 
@@ -36,11 +38,9 @@ If you'd like to contribute financially towards the effort (or any of my other O
 
 ## Contributions
 
-Please feel free to contribute to the quality of this content by submitting PRs for improvements to code snippets, explanations, etc. While typo fixes are welcomed, they will likely be caught through normal editing/publishing processes, **so please don't worry about them right now.**
+This book series is now complete, and is **not open to further contributions**.
 
-Any contributions you make to this effort **are of course greatly appreciated**.
-
-But **PLEASE** read the [Contributions Guidelines](CONTRIBUTING.md) carefully before submitting a PR.
+Thank you to those who've been part of the 11 years journey of this book series.
 
 ## Thank You To These Wonderful Sponsors
 
@@ -60,6 +60,6 @@ I want to extend a warm and deep thanks to Marc Grabanski and the entire Fronten
 
 ## License & Copyright
 
-The materials herein are all &copy; 2019-2022 Kyle Simpson.
+The materials herein are all &copy; 2019-2025 Kyle Simpson.
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
+<a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative Commons Attribution-NonCommercial-NoDerivs 4.0 Unported License</a>.
