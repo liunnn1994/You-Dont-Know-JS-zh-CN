@@ -48,11 +48,11 @@ Thank you to those who've been part of the 11 years journey of this book series.
 
 [![Frontend Masters Logo (light)](https://github.com/getify/You-Dont-Know-JS/blob/2nd-ed/external-logos/fem_logo.svg)](https://frontendmasters.com#gh-dark-mode-only)
 
-**The first two books of the second edition** are exclusively sponsored by **[Frontend Masters](https://frontendmasters.com)**.
+**The first two books of the second edition** are exclusively sponsored by **[Frontend Masters](https://frontendmasters.com/?code=simpson)**.
 
 Frontend Masters is the gold standard for top-of-the-line expert training material in frontend-oriented software development. With over 150 courses on all things frontend, this should be your first and only stop for quality video training on HTML, CSS, JS, and related technologies.
 
-**Note:** I teach [all my workshops](https://frontendmasters.com/kyle-simpson) exclusively through Frontend Masters. If you like this book content, please check out my video training courses.
+**Note:** I teach [all my workshops](https://frontendmasters.com/teachers/kyle-simpson?code=simpson) exclusively through Frontend Masters. If you like this book content, please check out my video training courses.
 
 I want to extend a warm and deep thanks to Marc Grabanski and the entire Frontend Masters team, not only for their excellent work with the video training platform, but for their unwavering support of me and of the "You Don't Know JS" books!
 
