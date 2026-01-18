@@ -1,6 +1,6 @@
 # Contributing
 
-This book series is now complete, **so in general, we're no longer open to contributions.**
+This book series is now complete, **so we are no longer open to contributions.**
 
 ## Translations
 
@@ -8,7 +8,7 @@ If you're wanting to translate these books, please keep in mind that any such tr
 
 Foreign translations are appreciated, but only for the 3 second edition books.
 
-**I will not be accepting any new foreign translations for previous editions.**
+**We will not be accepting any new foreign translations for previous editions.**
 
 ----
 
@@ -31,7 +31,7 @@ To summarize, the steps for a foreign language translation are:
 
 I understand that reading one long .md file, with no relative cross links to other sections/etc, is not the preferred reading experience for most of you. As such, it's totally reasonable to want to file an issue/PR to add those kinds of features.
 
-This topic has been brought up many times, and I've considered it. For now, I **do not** accept these kinds of changes into the repo.
+This topic has been brought up many times, and I've considered it. But we are not accepting such changes. 
 
 The main purpose of my book repos is to track and manage the content for the purposes of publication (paid-for ebooks and print books). I do this in the open because I also care about providing free and early access to the content, to make sure there is no paywall barrier to learning.
 
@@ -43,7 +43,7 @@ The intended **best reading experience** are the published books (either ebook o
 
 The current (and final) edition of the books is the 2nd edition.
 
-I **am not accepting any contributions** for 1st edition books, no exceptions.
+We **are not accepting any contributions** for these books, no exceptions.
 
 ## Typos?
 
@@ -53,4 +53,4 @@ We're not worried about typo fixes anymore. The books are done and published.
 
 Seriously, no more need for contributions.
 
-But, if you're going to attempt a contribution, please make sure to search the issues (both open and closed!) first.
+If you have a question, please search first before asking. It's probably already been asked and answered before, as these books have been around for 12 years now. 
