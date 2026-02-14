@@ -608,7 +608,7 @@ greeting;                               // Hello!
 
 ### Static `String` Helpers
 
-The following string utility functions are proviced directly on the `String` object, rather than as methods on individual string values:
+The following string utility functions are provided directly on the `String` object, rather than as methods on individual string values:
 
 * `String.fromCharCode(..)` / `String.fromCodePoint(..)`: produce a string from one or more arguments representing the code-units (`fromCharCode(..)`) or whole code-points (`fromCodePoint(..)`)
 
@@ -988,7 +988,7 @@ Values of `bigint` type cannot have decimals, so the parsing is unambiguous that
 
 * `Number.isNaN(..)`: The bug-fixed version of the global `isNaN(..)` utility, which identifies if the argument provided is the special `NaN` value
 
-* `Number.parseFloat(..)` / `Number.parseInt(..)`: utilties to parse string values for numeric digits, left-to-right, until the end of the string or the first non-float (or non-integer) character is encountered
+* `Number.parseFloat(..)` / `Number.parseInt(..)`: utilities to parse string values for numeric digits, left-to-right, until the end of the string or the first non-float (or non-integer) character is encountered
 
 ### Static `Math` Namespace
 

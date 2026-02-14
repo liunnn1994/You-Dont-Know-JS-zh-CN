@@ -197,7 +197,7 @@ You might wonder why empty slots are so bad? One reason: there are APIs in JS, l
 
 I don't have much specifically to say about functions here, other than to point out that they are also sub-object-types. This means that in addition to being executable, they can also have named properties added to or accessed from them.
 
-Functions have two pre-defined properties you may find yourself interacting with, specifially for meta-programming purposes:
+Functions have two pre-defined properties you may find yourself interacting with, specifically for meta-programming purposes:
 
 ```js
 function help(opt1,opt2,...remainingOpts) {

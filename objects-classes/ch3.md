@@ -566,7 +566,7 @@ class Point2d {
     // ..
 
     constructor(x,y) {
-        if (new.target === Point2) {
+        if (new.target === Point2d) {
             console.log("Constructing 'Point2d' instance");
         }
     }
