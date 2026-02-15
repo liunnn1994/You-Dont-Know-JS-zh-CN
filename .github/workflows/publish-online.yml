@@ -35,14 +35,14 @@ on:
 jobs:
   deploy-docs:
     runs-on: ubuntu-latest
-    if: ${{ github.event.pull_request.merged == true }} && ${{ github.ref == 'refs/heads/main' }}
+    if: ${{ github.event.pull_request.merged == true && github.ref == 'refs/heads/main' }}
 
     steps:
       - name: Checkout
         uses: actions/checkout@v6
         with:
-          ref: ${{ github.event.workflow_run.head_sha }}
+          ref: ${{ github.sha }}
           persist-credentials: false
 
       - name: Start Netlify Build
-        run: curl -X POST -d '{}' ${{ secrets.NETLIFY_BUILD_HOOKS }}
+        run: 'curl -X POST -H "Content-Type: application/json" -d "{}" ${{ secrets.NETLIFY_BUILD_HOOKS }}'
