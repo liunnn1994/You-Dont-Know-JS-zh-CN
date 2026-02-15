@@ -1,94 +1,94 @@
 name: Publish Release
 
 on:
-    workflow_run:
-        branches:
-            - main
-        workflows: ["Publish Online"]
-        types: [completed]
+  workflow_run:
+    branches:
+      - main
+    workflows: ["Publish Online"]
+    types: [completed]
 
 jobs:
-    deploy-release:
-        runs-on: ubuntu-latest
+  deploy-release:
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Install Dependencies
-              run: |
-                  sudo apt-get update
-                  sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
-                  sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-                  sudo apt-get update
-                  sudo apt-get install -y google-chrome-stable fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
+    steps:
+      - name: Install Dependencies
+        run: |
+          sudo apt-get update
+          sudo wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add - 
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable fontconfig fonts-ipafont-gothic fonts-wqy-zenhei fonts-thai-tlwg fonts-kacst fonts-freefont-ttf libxss1 --no-install-recommends
 
-            - uses: actions/checkout@v3
+      - uses: actions/checkout@v6
 
-            - uses: actions-cool/check-user-permission@v2
-              id: checkUser
-              with:
-                  require: "write"
+      - uses: actions-cool/check-user-permission@v2
+        id: checkUser
+        with:
+          require: "write"
 
-            - uses: actions/cache@v3
-              name: Setup puppeteer cache
-              with:
-                  path: ~/.cache/puppeteer
-                  key: ${{ runner.os }}-puppeteer
-                  restore-keys: |
-                      ${{ runner.os }}-puppeteer
+      - uses: actions/cache@v5
+        name: Setup puppeteer cache
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer
+          restore-keys: |
+            ${{ runner.os }}-puppeteer
 
-            - name: Setup node
-              uses: actions/setup-node@v3
-              with:
-                  node-version: 20
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
 
-            - name: Replace npmrc
-              run: cp -f .npmrc.github .npmrc
+      - name: Replace npmrc
+        run: cp -f .npmrc.github .npmrc
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v2
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
 
-            - name: Get pnpm store directory
-              id: pnpm-cache
-              run: |
-                  echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "pnpm_cache_dir=$(pnpm store path)" >> $GITHUB_OUTPUT
 
-            - uses: actions/cache@v3
-              name: Setup pnpm cache
-              with:
-                  path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
-                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-                  restore-keys: |
-                      ${{ runner.os }}-pnpm-store-
+      - uses: actions/cache@v5
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
-            - name: Install dependencies
-              run: pnpm i --frozen-lockfile
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile
 
-            - name: Vitepress custom pdf theme
-              run: |
-                  cp -a scripts/vitepress-theme/* .vitepress/theme
+      - name: Vitepress custom pdf theme
+        run: |
+          cp -a scripts/vitepress-theme/* .vitepress/theme
 
-            - name: Build
-              id: build
-              run: |
-                  pnpm run build
-                  pnpm run generate-pdf
-                  echo "VERSION=v$(node -p 'require("./package.json").version')" >> $GITHUB_OUTPUT
-                  echo "PRERELEASE=$(node -p 'require("./package.json").version.indexOf("-")>-1')" >> $GITHUB_OUTPUT
+      - name: Build
+        id: build
+        run: |
+          pnpm run build
+          pnpm run generate-pdf
+          echo "VERSION=v$(node -p 'require("./package.json").version')" >> $GITHUB_OUTPUT
+          echo "PRERELEASE=$(node -p 'require("./package.json").version.indexOf("-")>-1')" >> $GITHUB_OUTPUT
 
-            - name: Release
-              uses: softprops/action-gh-release@v1
-              with:
-                  name: ${{ steps.build.outputs.VERSION }}
-                  tag_name: ${{ steps.build.outputs.VERSION }}
-                  body: ${{ steps.build.outputs.VERSION }}
-                  token: ${{ secrets.GITHUB_TOKEN }}
-                  prerelease: ${{ contains(steps.build.outputs.PRERELEASE,'true') }}
-                  files: |
-                      ./.vitepress/dist/pdf/*.pdf
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ steps.build.outputs.VERSION }}
+          tag_name: ${{ steps.build.outputs.VERSION }}
+          body: ${{ steps.build.outputs.VERSION }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          prerelease: ${{ contains(steps.build.outputs.PRERELEASE,'true') }}
+          files: |
+            ./.vitepress/dist/pdf/*.pdf
 
-            - name: Commit and push
-              uses: stefanzweifel/git-auto-commit-action@v4
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              with:
-                  file_pattern: "package.json"
-                  commit_message: "chore(release): ${{ steps.build.outputs.VERSION }} [skip ci]"
+      - name: Commit and push
+        uses: stefanzweifel/git-auto-commit-action@v7
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          file_pattern: "package.json"
+          commit_message: "chore(release): ${{ steps.build.outputs.VERSION }} [skip ci]"

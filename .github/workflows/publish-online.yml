@@ -1,48 +1,48 @@
 name: Publish Online
 
 on:
-    pull_request:
-        types:
-            - closed
-        branches:
-            - main
-        paths:
-            - "es-next-beyond/**"
-            - "get-started/**"
-            - "objects-classes/**"
-            - "scope-closures/**"
-            - "sync-async/**"
-            - "types-grammar/**"
-    push:
-        branches:
-            - main
-        paths:
-            - "package.json"
-            - ".vitepress/config.ts"
-            - "es-next-beyond/**"
-            - "get-started/**"
-            - "objects-classes/**"
-            - "scope-closures/**"
-            - "sync-async/**"
-            - "types-grammar/**"
-    workflow_dispatch:
-        inputs:
-            deployNotes:
-                description: "手动触发文档部署"
-                required: true
-                type: boolean
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+    paths:
+      - "es-next-beyond/**"
+      - "get-started/**"
+      - "objects-classes/**"
+      - "scope-closures/**"
+      - "sync-async/**"
+      - "types-grammar/**"
+  push:
+    branches:
+      - main
+    paths:
+      - "package.json"
+      - ".vitepress/config.ts"
+      - "es-next-beyond/**"
+      - "get-started/**"
+      - "objects-classes/**"
+      - "scope-closures/**"
+      - "sync-async/**"
+      - "types-grammar/**"
+  workflow_dispatch:
+    inputs:
+      deployNotes:
+        description: "手动触发文档部署"
+        required: true
+        type: boolean
 
 jobs:
-    deploy-docs:
-        runs-on: ubuntu-latest
-        if: ${{ github.event.pull_request.merged == true }} && ${{ github.ref == 'refs/heads/main' }}
+  deploy-docs:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.pull_request.merged == true }} && ${{ github.ref == 'refs/heads/main' }}
 
-        steps:
-            - name: Checkout
-              uses: actions/checkout@v3
-              with:
-                  ref: ${{ github.event.workflow_run.head_sha }}
-                  persist-credentials: false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
 
-            - name: Start Netlify Build
-              run: curl -X POST -d '{}' ${{ secrets.NETLIFY_BUILD_HOOKS }}
+      - name: Start Netlify Build
+        run: curl -X POST -d '{}' ${{ secrets.NETLIFY_BUILD_HOOKS }}
