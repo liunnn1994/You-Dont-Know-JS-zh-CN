@@ -1,36 +1,36 @@
 {
-  "name": "you-dont-know-js-zh-cn",
-  "version": "1.1.4",
-  "type": "module",
-  "packageManager": "pnpm@10.29.3",
-  "private": true,
-  "author": "liunian <liunian@2077tech.com> (https://github.com/liunnn1994/You-Dont-Know-JS-zh-CN)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/liunnn1994/You-Dont-Know-JS-zh-CN.git"
-  },
-  "scripts": {
-    "preinstall": "npx only-allow pnpm",
-    "dev": "vitepress dev",
-    "preview": "vitepress preview --port 4173",
-    "build": "vitepress build",
-    "generate-pdf": "node ./scripts/html2pdf.mjs",
-    "upgrade-dep": "taze -w"
-  },
-  "devDependencies": {
-    "@types/markdown-it-footnote": "^3.0.4",
-    "pdf-merger-js": "^5.1.2",
-    "prettier": "^3.8.1",
-    "puppeteer": "^24.37.3",
-    "sass": "^1.97.3",
-    "taze": "^19.9.2",
-    "vitepress": "^1.6.4"
-  },
-  "engines": {
-    "pnpm": ">=10.29.3",
-    "node": ">=24.0.0"
-  },
-  "dependencies": {
-    "markdown-it-footnote": "^3.0.3"
-  }
+    "name": "you-dont-know-js-zh-cn",
+    "version": "1.1.5",
+    "type": "module",
+    "packageManager": "pnpm@10.29.3",
+    "private": true,
+    "author": "liunian <liunian@2077tech.com> (https://github.com/liunnn1994/You-Dont-Know-JS-zh-CN)",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/liunnn1994/You-Dont-Know-JS-zh-CN.git"
+    },
+    "scripts": {
+        "preinstall": "npx only-allow pnpm",
+        "dev": "vitepress dev",
+        "preview": "vitepress preview --port 4173",
+        "build": "vitepress build",
+        "generate-pdf": "node ./scripts/html2pdf.mjs",
+        "upgrade-dep": "taze -w"
+    },
+    "devDependencies": {
+        "@types/markdown-it-footnote": "^3.0.4",
+        "pdf-merger-js": "^5.1.2",
+        "prettier": "^3.8.1",
+        "puppeteer": "^24.37.3",
+        "sass": "^1.97.3",
+        "taze": "^19.9.2",
+        "vitepress": "^1.6.4"
+    },
+    "engines": {
+        "pnpm": ">=10.29.3",
+        "node": ">=24.0.0"
+    },
+    "dependencies": {
+        "markdown-it-footnote": "^3.0.3"
+    }
 }
